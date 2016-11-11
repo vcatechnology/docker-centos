@@ -25,3 +25,6 @@ RUN touch                    /usr/local/bin/vca-uninstall-package && \
   echo '#! /bin/sh'       >> /usr/local/bin/vca-uninstall-package && \
   echo 'set -e'           >> /usr/local/bin/vca-uninstall-package && \
   echo 'yum -y remove $@' >> /usr/local/bin/vca-uninstall-package
+
+# Enable the packages for enterprise linux
+RUN vca-install-package epel-release
