@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos
 MAINTAINER VCA Technology <developers@vcatechnology.com>
 
 #update all packages
