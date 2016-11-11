@@ -18,3 +18,10 @@ RUN touch                  /usr/local/bin/vca-install-package && \
   echo 'set -e'            >> /usr/local/bin/vca-install-package && \
   echo 'yum -y install $@' >> /usr/local/bin/vca-install-package && \
   echo 'yum clean all'     >> /usr/local/bin/vca-install-package
+
+# Create uninstall script
+RUN touch                    /usr/local/bin/vca-uninstall-package && \
+  chmod +x                   /usr/local/bin/vca-uninstall-package && \
+  echo '#! /bin/sh'       >> /usr/local/bin/vca-uninstall-package && \
+  echo 'set -e'           >> /usr/local/bin/vca-uninstall-package && \
+  echo 'yum -y remove $@' >> /usr/local/bin/vca-uninstall-package
