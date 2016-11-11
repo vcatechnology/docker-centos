@@ -21,11 +21,9 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 RUN yum -y update && \
   yum clean all
 
-# Generate locales
-RUN cat /etc/locale.gen | expand | sed 's/^# .*$//g' | sed 's/^#$//g' | egrep -v '^$' | sed 's/^#//g' > /tmp/locale.gen \
-  && mv -f /tmp/locale.gen /etc/locale.gen \
-  && locale-gen
-ENV LANG=en_GB.utf8
+# install locale
+RUN localedef -c -f UTF-8 -i en_US en_GB.UTF-8
+ENV LANG=en_GB.UTF-8
 
 # Create install script
 RUN touch                                      /usr/local/bin/vca-install-package && \
