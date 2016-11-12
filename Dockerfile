@@ -9,7 +9,7 @@ ARG VERSION
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.name="$PROJECT_NAME" \
       org.label-schema.description="A CentOS image that is updated daily with new packages" \
-      org.label-schema.url="https://www.debian.org/" \
+      org.label-schema.url="https://www.centos.org/" \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="https://github.com/vcatechnology/docker-centos" \
       org.label-schema.vendor="VCA Technology" \
